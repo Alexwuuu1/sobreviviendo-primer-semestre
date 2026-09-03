@@ -266,7 +266,7 @@ GameObject:
   m_Component:
   - component: {fileID: 175618463}
   m_Layer: 0
-  m_Name: "NOTA - Escena visual sin mec\xE1nicas (Hito 2)"
+  m_Name: NOTA - Escena 2D jugable con movimiento horizontal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -297,6 +297,9 @@ GameObject:
   m_Component:
   - component: {fileID: 207597058}
   - component: {fileID: 207597059}
+  - component: {fileID: 207597062}
+  - component: {fileID: 207597061}
+  - component: {fileID: 207597060}
   m_Layer: 0
   m_Name: Estudiante Provisional
   m_TagString: Untagged
@@ -368,7 +371,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 6
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: d70b7f8e2d6aa1e4db47c7eb11bf4c91, type: 3}
+  m_Sprite: {fileID: 5938784878687845396, guid: 8ce8d64566a6a7a42a4cba4eeab313fd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -378,6 +381,100 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &207597060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 207597057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f12d7b65412b4afcbb2d36f72943a403, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement2D
+  speed: 4.5
+  minimumX: -13.8
+  maximumX: 13.8
+  framesPerSecond: 8
+  walkingFrames:
+  - {fileID: 5938784878687845396, guid: 8ce8d64566a6a7a42a4cba4eeab313fd, type: 3}
+  - {fileID: 4987507464861913309, guid: 8ce8d64566a6a7a42a4cba4eeab313fd, type: 3}
+  - {fileID: -8390260656738452349, guid: 8ce8d64566a6a7a42a4cba4eeab313fd, type: 3}
+  - {fileID: -3959902170561696838, guid: 8ce8d64566a6a7a42a4cba4eeab313fd, type: 3}
+--- !u!61 &207597061
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 207597057}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: -0.1}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.5, y: 2}
+    newSize: {x: 1, y: 1.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.8, y: 1.7}
+  m_EdgeRadius: 0
+--- !u!50 &207597062
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 207597057}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 1
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 6
 --- !u!1 &225723745
 GameObject:
   m_ObjectHideFlags: 0

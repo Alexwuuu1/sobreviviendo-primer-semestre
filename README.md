@@ -47,7 +47,7 @@ El jugador llegará por primera vez a la universidad y deberá aprender a orient
 
 ## Estado del proyecto
 
-Prototipo visual inicial. La escena contiene cámara, fondo, una sección del campus creada con tiles y elementos visuales relacionados con la temática. Todavía no incluye movimiento, scripts de jugabilidad, enemigos, físicas ni menús funcionales porque no son requisitos del Hito 2.
+Prototipo 2D jugable. La escena contiene cámara ortográfica, fondo, una sección del campus creada con tiles, elementos visuales relacionados con la temática y un personaje animado con movimiento horizontal.
 
 ## Estructura del proyecto
 
@@ -80,9 +80,9 @@ Las carpetas `Library/`, `Temp/`, `Logs/` y `UserSettings/` se generan localment
 4. Elegir la carpeta raíz del repositorio.
 5. Abrir el proyecto con Unity `6000.3.16f1` o una versión compatible.
 6. Abrir `Assets/Scenes/Nivel01.unity`.
-7. Presionar **Play** para visualizar la escena estática.
+7. Presionar **Play** para probar la escena y el movimiento del personaje.
 
-No existe una mecánica jugable en este hito. El botón Play únicamente permite comprobar que la escena y el proyecto cargan correctamente.
+Al presionar Play, el personaje se mueve horizontalmente con `A`/`D` o con las flechas izquierda/derecha. Su sprite se anima mientras camina y cambia de orientación según la dirección.
 
 ## Escena inicial
 

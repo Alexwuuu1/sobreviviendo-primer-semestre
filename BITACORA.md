@@ -16,6 +16,9 @@
 - Se redactó el README del proyecto.
 - Se documentó el flujo de ramas `main`, `develop` y `feature/*`.
 - Se agregaron y aceptaron los tres colaboradores restantes en GitHub.
+- Se configuró el proyecto para abrirse en modo 2D por defecto.
+- Se incorporó el personaje original del equipo con cuatro cuadros de animación.
+- Se añadió movimiento horizontal con teclado, física 2D y cambio de orientación.
 
 ### Problemas encontrados
 
