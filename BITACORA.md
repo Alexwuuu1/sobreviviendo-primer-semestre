@@ -15,35 +15,32 @@
 - Se construyó una zona del campus usando Grid y Tilemap.
 - Se redactó el README del proyecto.
 - Se documentó el flujo de ramas `main`, `develop` y `feature/*`.
+- Se agregaron y aceptaron los tres colaboradores restantes en GitHub.
 
 ### Problemas encontrados
 
 - La primera creación automática del proyecto tardó más de lo esperado mientras Unity intentaba conectarse con el servicio local de licencias.
 - La consigna menciona assets libres en una sección y assets propios en las condiciones generales.
-- Faltan los nombres completos y usuarios de GitHub de tres integrantes.
+- Al verificar el historial, todavía solo Alejandro aparece como autor de commits; faltan los aportes individuales de los otros tres integrantes.
 
 ### Soluciones aplicadas
 
 - Se conservó la estructura válida generada por Unity y se preparó una herramienta de Editor para crear la escena al abrir el proyecto normalmente.
 - Se optó por generar gráficos originales dentro del proyecto para cumplir la interpretación más estricta de la consigna.
-- Se dejaron campos claramente marcados como pendientes en el README para completarlos antes de la entrega.
+- Se registraron los nombres completos y los usuarios de GitHub confirmados en el README.
+- Se verificó en GitHub que los cuatro integrantes tienen permiso de colaboración.
 
 ### Tareas pendientes
 
-- Abrir el proyecto en Unity y confirmar que `Nivel01` se visualiza correctamente.
-- Crear el repositorio público en GitHub y configurar el remoto.
-- Completar nombres y usuarios de GitHub.
-- Agregar a todos los integrantes como colaboradores.
-- Hacer que cada integrante realice al menos un commit desde su cuenta.
-- Integrar las ramas feature en `develop` y luego `develop` en `main`.
+- Hacer que Cristopher, Galilea y Alex Joel realicen al menos un commit desde sus propias cuentas.
+- Integrar las ramas de los compañeros en `develop` y luego actualizar `main`.
 - Revisar el historial de GitHub y practicar la defensa oral.
 
 ### Distribución de responsabilidades
 
 | Integrante | Tarea | Rama sugerida | Evidencia esperada |
 | --- | --- | --- | --- |
-| Alejandro Villalpando Rojas | Estructura Unity y repositorio | `feature/estructura-unity` | Commit de configuración inicial |
-| Criss | Fondo y decoración | `feature/fondo-campus` | Commit de un cambio visual propio |
-| Galilea | Tiles y Tilemap | `feature/tilemap-campus` | Commit que modifique el escenario |
-| Alex | Documentación | `feature/documentacion` | Commit que complete README y bitácora |
-
+| Alejandro Villalpando Rojas (`Alexwuuu1`) | Estructura Unity y repositorio | `feature/escena-inicial` | Commit de configuración inicial |
+| Cristopher Iori Lazcano Gutierrez (`Crisshubb`) | Fondo y decoración | `feature/fondo-campus` | Commit de un cambio visual propio |
+| Galilea Alison Llusco Asistiri (`Galileya`) | Tiles y Tilemap | `feature/tilemap-campus` | Commit que modifique el escenario |
+| Alex Joel Quispe Ticona (`lpzealexjoelquispeti-dot`) | Documentación | `feature/documentacion` | Commit que complete README y bitácora |
