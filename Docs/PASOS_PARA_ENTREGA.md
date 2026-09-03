@@ -2,7 +2,7 @@
 
 ## 1. Completar los datos del equipo
 
-Editar la tabla **Integrantes** de `README.md` con los nombres completos y usuarios de GitHub de Criss, Galilea y Alex.
+Los usuarios confirmados son `Crisshubb`, `Galileya` y `lpzealexjoelquispeti-dot`. Comprobar que coincidan con las cuentas que aceptaron las invitaciones.
 
 ## 2. Comprobar el proyecto en Unity
 
@@ -26,7 +26,7 @@ El repositorio debe ser público y contener `Assets/`, `Packages/`, `ProjectSett
 
 ## 4. Agregar colaboradores
 
-En GitHub, abrir **Settings > Collaborators > Add people** y agregar las cuentas de Criss, Galilea y Alex. Cada persona debe aceptar la invitación.
+Los cuatro integrantes ya aparecen como colaboradores con acceso al repositorio. Antes de entregar, volver a comprobar esta sección y confirmar que cada cuenta tenga al menos un commit propio.
 
 ## 5. Preparar las ramas
 
@@ -42,14 +42,22 @@ main
 
 Cada rama feature debe salir de `develop`, no directamente de `main`.
 
+Las tres ramas de los compañeros ya fueron creadas en GitHub. Cada integrante debe cambiar a su rama asignada antes de modificar archivos.
+
 ## 6. Garantizar participación individual
 
 Cada integrante debe clonar el repositorio o trabajar con su propia cuenta y realizar una modificación real:
 
 - Alejandro: configuración y estructura del proyecto.
-- Criss: agregar o ajustar una decoración o parte del fondo.
+- Cristopher: agregar o ajustar una decoración o parte del fondo.
 - Galilea: agregar varios tiles al escenario y guardar la escena.
 - Alex: completar los datos del equipo y actualizar la bitácora.
+
+Ramas asignadas:
+
+- Cristopher (`Crisshubb`): `feature/fondo-campus`.
+- Galilea (`Galileya`): `feature/tilemap-campus`.
+- Alex Joel (`lpzealexjoelquispeti-dot`): `feature/documentacion`.
 
 No se debe cambiar el autor de los commits ni realizar los cuatro commits desde una sola cuenta. El docente revisará las identidades en el historial.
 
@@ -95,4 +103,3 @@ Antes de entregar, confirmar:
 ## 10. Entregar
 
 Entregar la URL pública del repositorio. Todos los integrantes deben poder explicar su aporte, su rama y su commit.
-

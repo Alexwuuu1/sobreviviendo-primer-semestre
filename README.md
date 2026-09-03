@@ -39,11 +39,11 @@ El jugador llegará por primera vez a la universidad y deberá aprender a orient
 | Integrante | Usuario de GitHub | Responsabilidad principal |
 | --- | --- | --- |
 | Alejandro Villalpando Rojas | `Alexwuuu1` | Repositorio, proyecto Unity y estructura inicial |
-| Criss (completar nombre) | `PENDIENTE` | Fondo y elementos decorativos |
-| Galilea (completar nombre) | `PENDIENTE` | Tiles y escenario con Tilemap |
-| Alex (completar nombre) | `PENDIENTE` | README, bitácora y revisión |
+| Cristopher Iori Lazcano Gutierrez | `Crisshubb` | Fondo y elementos decorativos |
+| Galilea Alison Llusco Asistiri | `Galileya` | Tiles y escenario con Tilemap |
+| Alex Joel Quispe Ticona | `lpzealexjoelquispeti-dot` | README, bitácora y revisión |
 
-> Antes de entregar, se deben completar los nombres y usuarios pendientes. Cada integrante debe realizar al menos un commit real desde su propia cuenta de GitHub.
+> Los cuatro integrantes ya aparecen como colaboradores. Antes de la entrega, cada integrante debe realizar al menos un commit real desde su propia cuenta de GitHub.
 
 ## Estado del proyecto
 
@@ -136,4 +136,3 @@ Flujo utilizado:
 - [Bitácora](BITACORA.md)
 - [Pasos para completar la entrega](Docs/PASOS_PARA_ENTREGA.md)
 - [Guía para la defensa oral](Docs/GUIA_DEFENSA.md)
-
