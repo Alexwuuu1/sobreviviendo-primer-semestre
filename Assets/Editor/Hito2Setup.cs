@@ -11,6 +11,7 @@ public static class Hito2Setup
 {
     private const string MarkerPath = "ProjectSettings/Hito2SetupComplete.txt";
     private const string ScenePath = "Assets/Scenes/Nivel01.unity";
+    private const string PlayerSheetPath = "Assets/Art/Characters/PlayerWalkRight.png";
 
     static Hito2Setup()
     {
@@ -21,6 +22,7 @@ public static class Hito2Setup
     public static void BuildScene()
     {
         EnsureFolders();
+        EditorSettings.defaultBehaviorMode = EditorBehaviorMode.Mode2D;
 
         Sprite background = CreateTexture("Assets/Art/Backgrounds/CampusBackground.png", 32, 18, DrawBackground, 1f);
         Sprite grass = CreateTexture("Assets/Art/Tiles/GrassTile.png", 16, 16, DrawGrass, 16f);
@@ -30,7 +32,7 @@ public static class Hito2Setup
         Sprite tree = CreateTexture("Assets/Art/Decorations/Tree.png", 16, 24, DrawTree, 16f);
         Sprite bench = CreateTexture("Assets/Art/Decorations/Bench.png", 24, 12, DrawBench, 16f);
         Sprite sign = CreateTexture("Assets/Art/Decorations/CampusSign.png", 20, 20, DrawSign, 16f);
-        Sprite student = CreateTexture("Assets/Art/Characters/Student.png", 16, 24, DrawStudent, 16f);
+        Sprite[] studentFrames = ImportPlayerSpriteSheet();
 
         Tile grassTile = CreateTile("Assets/Art/Tiles/GeneratedTiles/Grass.asset", grass);
         Tile pathTile = CreateTile("Assets/Art/Tiles/GeneratedTiles/Path.asset", path);
@@ -99,9 +101,10 @@ public static class Hito2Setup
 
         CreateSpriteObject("Banco", bench, new Vector3(4.5f, -0.8f), 4, decorations.transform);
         CreateSpriteObject("Señal de Bienvenida", sign, new Vector3(-4f, -0.5f), 5, decorations.transform);
-        CreateSpriteObject("Estudiante Provisional", student, new Vector3(0.5f, -5f), 6, root.transform);
+        GameObject player = CreateSpriteObject("Estudiante Provisional", studentFrames[0], new Vector3(0.5f, -5f), 6, root.transform);
+        ConfigurePlayer(player, studentFrames);
 
-        GameObject notes = new GameObject("NOTA - Escena visual sin mecánicas (Hito 2)");
+        GameObject notes = new GameObject("NOTA - Escena 2D jugable con movimiento horizontal");
         notes.transform.SetParent(root.transform);
 
         EditorSceneManager.SaveScene(scene, ScenePath);
@@ -124,13 +127,14 @@ public static class Hito2Setup
 
     private static void RunOnce()
     {
-        if (File.Exists(MarkerPath))
-        {
-            return;
-        }
-
         try
         {
+            if (File.Exists(MarkerPath))
+            {
+                EnsureExistingSceneIsPlayable();
+                return;
+            }
+
             BuildScene();
         }
         catch (Exception exception)
@@ -151,6 +155,7 @@ public static class Hito2Setup
             "Assets/Materials",
             "Assets/Prefabs",
             "Assets/Scenes",
+            "Assets/Scripts",
             "Docs"
         };
 
@@ -178,6 +183,120 @@ public static class Hito2Setup
         renderer.sprite = sprite;
         renderer.sortingOrder = order;
         return gameObject;
+    }
+
+    private static void EnsureExistingSceneIsPlayable()
+    {
+        EditorSettings.defaultBehaviorMode = EditorBehaviorMode.Mode2D;
+        if (!File.Exists(ScenePath) || !File.Exists(PlayerSheetPath))
+        {
+            return;
+        }
+
+        Sprite[] frames = ImportPlayerSpriteSheet();
+        Scene scene = SceneManager.GetActiveScene();
+        if (scene.path != ScenePath)
+        {
+            scene = EditorSceneManager.OpenScene(ScenePath, OpenSceneMode.Single);
+        }
+
+        GameObject player = GameObject.Find("Estudiante Provisional");
+        if (player == null)
+        {
+            Debug.LogWarning("No se encontró el objeto Estudiante Provisional en Nivel01.");
+            return;
+        }
+
+        ConfigurePlayer(player, frames);
+        GameObject oldNote = GameObject.Find("NOTA - Escena visual sin mecánicas (Hito 2)");
+        if (oldNote != null)
+        {
+            oldNote.name = "NOTA - Escena 2D jugable con movimiento horizontal";
+        }
+
+        EditorSceneManager.MarkSceneDirty(scene);
+        EditorSceneManager.SaveScene(scene);
+        EditorBuildSettings.scenes = new[] { new EditorBuildSettingsScene(ScenePath, true) };
+        AssetDatabase.SaveAssets();
+        Debug.Log("Movimiento 2D configurado. Usa A/D o las flechas izquierda y derecha.");
+    }
+
+    private static void ConfigurePlayer(GameObject player, Sprite[] frames)
+    {
+        SpriteRenderer renderer = player.GetComponent<SpriteRenderer>();
+        renderer.sprite = frames[0];
+
+        Rigidbody2D body = player.GetComponent<Rigidbody2D>();
+        if (body == null)
+        {
+            body = player.AddComponent<Rigidbody2D>();
+        }
+        body.bodyType = RigidbodyType2D.Dynamic;
+        body.gravityScale = 0f;
+        body.interpolation = RigidbodyInterpolation2D.Interpolate;
+        body.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
+
+        BoxCollider2D collider = player.GetComponent<BoxCollider2D>();
+        if (collider == null)
+        {
+            collider = player.AddComponent<BoxCollider2D>();
+        }
+        collider.size = new Vector2(0.8f, 1.7f);
+        collider.offset = new Vector2(0f, -0.1f);
+
+        PlayerMovement2D controller = player.GetComponent<PlayerMovement2D>();
+        if (controller == null)
+        {
+            controller = player.AddComponent<PlayerMovement2D>();
+        }
+        controller.Configure(renderer, frames);
+        EditorUtility.SetDirty(player);
+        EditorUtility.SetDirty(controller);
+    }
+
+    private static Sprite[] ImportPlayerSpriteSheet()
+    {
+        AssetDatabase.ImportAsset(PlayerSheetPath, ImportAssetOptions.ForceUpdate);
+        TextureImporter importer = (TextureImporter)AssetImporter.GetAtPath(PlayerSheetPath);
+        bool needsSetup = importer.textureType != TextureImporterType.Sprite ||
+                          importer.spriteImportMode != SpriteImportMode.Multiple ||
+                          !Mathf.Approximately(importer.spritePixelsPerUnit, 16f) ||
+                          importer.filterMode != FilterMode.Point ||
+                          importer.mipmapEnabled;
+
+        if (needsSetup)
+        {
+            importer.textureType = TextureImporterType.Sprite;
+            importer.spriteImportMode = SpriteImportMode.Multiple;
+            importer.spritePixelsPerUnit = 16f;
+            importer.mipmapEnabled = false;
+            importer.filterMode = FilterMode.Point;
+            importer.textureCompression = TextureImporterCompression.Uncompressed;
+            importer.alphaIsTransparency = true;
+
+            SpriteMetaData[] metadata = new SpriteMetaData[4];
+            for (int i = 0; i < metadata.Length; i++)
+            {
+                metadata[i] = new SpriteMetaData
+                {
+                    name = "PlayerWalkRight_" + i,
+                    rect = new Rect(i * 24, 0, 24, 32),
+                    alignment = (int)SpriteAlignment.Center,
+                    pivot = new Vector2(0.5f, 0.5f)
+                };
+            }
+            importer.spritesheet = metadata;
+            importer.SaveAndReimport();
+        }
+
+        UnityEngine.Object[] assets = AssetDatabase.LoadAllAssetsAtPath(PlayerSheetPath);
+        Sprite[] frames = Array.FindAll(Array.ConvertAll(assets, asset => asset as Sprite), sprite => sprite != null);
+        Array.Sort(frames, (left, right) => string.CompareOrdinal(left.name, right.name));
+        if (frames.Length != 4)
+        {
+            throw new InvalidOperationException("La hoja del personaje debe contener cuatro sprites de 24x32.");
+        }
+        return frames;
     }
 
     private static Tile CreateTile(string assetPath, Sprite sprite)
