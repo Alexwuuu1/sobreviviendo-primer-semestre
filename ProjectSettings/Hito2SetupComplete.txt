@@ -1,0 +1,2 @@
+Escena del Hito 2 creada el 2026-09-03 15:27:55
+Para reconstruirla: Tools > Hito 2 > Crear o reconstruir escena
