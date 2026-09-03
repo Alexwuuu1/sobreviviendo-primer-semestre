@@ -33,14 +33,18 @@
 - [x] Proyecto abierto y escena generada sin errores de compilación.
 - [x] Los tres colaboradores aceptaron sus invitaciones de GitHub.
 - [x] Los cuatro integrantes aparecen como colaboradores.
+- [x] Alejandro tiene commits reconocidos por GitHub.
+- [x] Cristopher tiene commits reconocidos por GitHub y su aporte visual está integrado.
+- [x] README actualizado con autoría y uso de los assets nuevos.
+- [x] Bitácora actualizada para coincidir con el historial actual.
+- [x] Clonación limpia abierta y compilada correctamente con Unity 6000.3.16f1.
 
 ## Pendientes obligatorios
 
-- [ ] Cada integrante debe realizar al menos un commit real desde su propia cuenta.
-- [ ] Las ramas de los compañeros deben integrarse en `develop`.
-- [ ] Tras integrar los aportes, comprobar nuevamente la escena en Unity.
-- [ ] Actualizar la bitácora para que coincida con el historial final de commits.
-- [ ] Integrar la versión final de `develop` en `main`.
+- [ ] Galilea debe realizar al menos un commit real desde la cuenta `Galileya`.
+- [ ] Alex Joel debe vincular y verificar en GitHub el correo usado en su commit, o realizar un commit nuevo reconocido como `lpzealexjoelquispeti-dot`.
+- [ ] Integrar esos dos aportes finales en `develop` y después en `main`.
+- [ ] Tras integrarlos, comprobar nuevamente la escena en Unity.
 - [ ] Cada integrante debe practicar la defensa oral.
 - [ ] Entregar la URL pública del repositorio.
 

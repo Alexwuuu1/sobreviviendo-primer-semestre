@@ -6,7 +6,7 @@ Proyecto del Grupo 64 para la evaluación procesual Hito 2 de Programación Grá
 
 `Sobreviviendo al Primer Semestre` es un videojuego 2D de simulación de vida y aventura ligera. El jugador representa a un estudiante de primer ingreso que explora el campus universitario, conoce sus servicios y aprende a equilibrar estudio, energía y vida social.
 
-En este hito se presenta la primera base visual y técnica del proyecto: una escena estática de la entrada del campus, organizada para continuar el desarrollo durante el semestre.
+En este hito se presenta la primera base visual y técnica del proyecto: una escena 2D de la entrada del campus, organizada para continuar el desarrollo durante el semestre. Además de los requisitos evaluados, el prototipo permite mover y animar horizontalmente al personaje.
 
 ## Género
 
@@ -45,6 +45,15 @@ El jugador llegará por primera vez a la universidad y deberá aprender a orient
 
 > Los cuatro integrantes ya aparecen como colaboradores. Antes de la entrega, cada integrante debe realizar al menos un commit real desde su propia cuenta de GitHub.
 
+### Evidencia de participación
+
+| Cuenta | Estado comprobado |
+| --- | --- |
+| `Alexwuuu1` | Commits reconocidos por GitHub |
+| `Crisshubb` | Commits reconocidos por GitHub en `feature/fondo-campus`, `develop` y `main` |
+| `lpzealexjoelquispeti-dot` | Existe el aporte `Añadir nuevos sprites a la carpeta Art`, pero su correo todavía no está vinculado por GitHub a esta cuenta |
+| `Galileya` | Colaboradora con permiso de escritura; commit individual pendiente |
+
 ## Estado del proyecto
 
 Prototipo 2D jugable. La escena contiene cámara ortográfica, fondo, una sección del campus creada con tiles, elementos visuales relacionados con la temática y un personaje animado con movimiento horizontal.
@@ -62,12 +71,14 @@ Assets/
 ├── Editor/            Herramienta reproducible de preparación del hito
 ├── Materials/         Materiales futuros
 ├── Prefabs/           Prefabs futuros
+├── Scripts/           Movimiento y animación horizontal del personaje
 └── Scenes/
     └── Nivel01.unity  Escena inicial evaluable
 
 Packages/              Dependencias de Unity
 ProjectSettings/       Configuración del proyecto
 Docs/                  Guías internas y vista previa
+SourceAssets/          Fuentes editables de Aseprite aportadas por el equipo
 ```
 
 Las carpetas `Library/`, `Temp/`, `Logs/` y `UserSettings/` se generan localmente y están excluidas mediante `.gitignore`.
@@ -100,7 +111,7 @@ La escena `Nivel01` representa la entrada al campus e incluye:
 
 ## Assets
 
-Todos los gráficos iniciales son originales y se generan dentro del proyecto mediante `Assets/Editor/Hito2Setup.cs`. No se utilizan paquetes gráficos externos.
+Los gráficos son originales del Grupo 64. Una parte se genera mediante `Assets/Editor/Hito2Setup.cs` y otra corresponde a aportes directos de los integrantes. No se copiaron paquetes gráficos de otros videojuegos.
 
 | Asset | Autoría | Uso dentro del proyecto |
 | --- | --- | --- |
@@ -112,9 +123,15 @@ Todos los gráficos iniciales son originales y se generan dentro del proyecto me
 | `Tree.png` | Grupo 64 | Decoración del campus |
 | `Bench.png` | Grupo 64 | Mobiliario exterior |
 | `CampusSign.png` | Grupo 64 | Señalización |
-| `Student.png` | Grupo 64 | Personaje provisional |
+| `Student.png` | Grupo 64 | Personaje provisional generado durante la preparación inicial |
+| `PlayerWalkRight.png` | Grupo 64, proporcionado por Alejandro | Hoja de cuatro fotogramas usada por el personaje jugable |
+| `CampusMapHorizontal_256x128.png` | Cristopher Iori Lazcano Gutierrez (`Crisshubb`) | Fondo horizontal alternativo del campus |
+| `StudentCampus_24x32.png` | Cristopher Iori Lazcano Gutierrez (`Crisshubb`) | Personaje alternativo del pack visual |
+| `Tiles/CampusPack/*` | Cristopher Iori Lazcano Gutierrez (`Crisshubb`) | Ocho tiles de 16×16 para ampliar el Tilemap |
+| `Decorations/CampusPack/*` | Cristopher Iori Lazcano Gutierrez (`Crisshubb`) | Árbol, banco, lámpara y quiosco para el escenario |
+| `SourceAssets/Aseprite/Sprite-0001.ase` a `Sprite-0004.ase` | Grupo 64; incorporados al repositorio por Alex Joel | Fuentes editables de escenarios y animaciones |
 
-Uso autorizado únicamente para el proyecto académico del Grupo 64. Si posteriormente se incorporan recursos externos, deberá registrarse su autor, URL y licencia en esta sección.
+El detalle técnico del aporte de Cristopher se encuentra en [`Assets/Art/CAMPUS_PACK.md`](Assets/Art/CAMPUS_PACK.md). Uso autorizado únicamente para el proyecto académico del Grupo 64. Si posteriormente se incorporan recursos externos, deberá registrarse su autor, URL y licencia en esta sección.
 
 ## Flujo de trabajo
 

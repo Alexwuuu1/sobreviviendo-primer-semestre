@@ -19,12 +19,18 @@
 - Se configuró el proyecto para abrirse en modo 2D por defecto.
 - Se incorporó el personaje original del equipo con cuatro cuadros de animación.
 - Se añadió movimiento horizontal con teclado, física 2D y cambio de orientación.
+- Alex Joel incorporó archivos fuente de Aseprite mediante el commit `9c2c60e`.
+- Cristopher creó e incorporó un fondo, un personaje alternativo, ocho tiles y cuatro decoraciones para el campus desde `feature/fondo-campus`.
+- Los aportes visuales de Cristopher se integraron en `develop` y `main` conservando su autoría.
+- Se fusionaron Pull Requests de `develop` hacia `main` y se comprobó una clonación limpia con Unity 6000.3.16f1.
 
 ### Problemas encontrados
 
 - La primera creación automática del proyecto tardó más de lo esperado mientras Unity intentaba conectarse con el servicio local de licencias.
 - La consigna menciona assets libres en una sección y assets propios en las condiciones generales.
-- Al verificar el historial, todavía solo Alejandro aparece como autor de commits; faltan los aportes individuales de los otros tres integrantes.
+- GitHub reconoce commits de Alejandro y Cristopher.
+- El commit de Alex Joel existe, pero el correo `alexjoelquispeticona48@gmail.com` no está vinculado por GitHub a la cuenta `lpzealexjoelquispeti-dot`.
+- Galilea todavía no aparece como autora de ningún commit.
 
 ### Soluciones aplicadas
 
@@ -32,12 +38,16 @@
 - Se optó por generar gráficos originales dentro del proyecto para cumplir la interpretación más estricta de la consigna.
 - Se registraron los nombres completos y los usuarios de GitHub confirmados en el README.
 - Se verificó en GitHub que los cuatro integrantes tienen permiso de colaboración.
+- Se comprobó que el repositorio no tiene protección de ramas ni reglas que impidan a los colaboradores realizar commits.
+- Se añadieron los `.meta` faltantes de los archivos Aseprite para mantener una clonación limpia y portable.
+- Se actualizó el inventario y la autoría de los assets principales en el README.
 
 ### Tareas pendientes
 
-- Hacer que Cristopher, Galilea y Alex Joel realicen al menos un commit desde sus propias cuentas.
-- Integrar las ramas de los compañeros en `develop` y luego actualizar `main`.
-- Revisar el historial de GitHub y practicar la defensa oral.
+- Vincular y verificar en la cuenta de Alex Joel el correo usado en su commit, o crear un commit nuevo desde su cuenta de GitHub.
+- Hacer que Galilea realice un commit real desde `Galileya`.
+- Integrar esos aportes finales en `develop` y luego en `main`.
+- Practicar la defensa oral y entregar la URL pública del repositorio.
 
 ### Distribución de responsabilidades
 
